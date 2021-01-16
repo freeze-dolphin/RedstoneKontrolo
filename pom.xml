@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.freeze-dolphin</groupId>
+	<artifactId>tickblock-redstone-control</artifactId>
+	<version>1.0.0</version>
+
+	<name>TickBlockRedstoneControl</name>
+	<url>https://github.com/freeze-dolphin/TickBlockRedstoneControl</url>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus-aliyun</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+		<repository>
+			<id>nexus-aliyun</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+		</repository>
+		<repository>
+			<id>taboolib</id>
+			<url>http://ptms.ink:8081/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>lss233-minecraft</id>
+			<name>Lss233's Minecraft Repository</name>
+			<url>http://lss233.littleservice.cn/repositories/minecraft/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>ink.ptms.core</groupId>
+			<artifactId>v11200</artifactId>
+			<version>11200</version>
+			<scope>provided</scope>
+			<classifier>all</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.gitee.narcissu14</groupId>
+			<artifactId>Slimefun4</artifactId>
+			<version>v4.1.15</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.name} v${project.version}</finalName>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<escapeString>\</escapeString>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
