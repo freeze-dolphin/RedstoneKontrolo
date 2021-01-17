@@ -1,0 +1,11 @@
+name: RedstoneKontrolo
+author: Freeze_Dolphin
+website: https://github.com/freeze-dolphin/RedstoneKontrolo
+
+version: ${project.version}
+
+main: io.freeze_dolphin.redstone_kontrolo.RedstoneKontrolo
+
+depend: 
+- Slimefun
+- CS-CoreLib

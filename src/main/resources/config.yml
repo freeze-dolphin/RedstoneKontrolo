@@ -1,0 +1,24 @@
+cglib: 
+
+   # DO NOT MODIFY THIS UNLESS YOU KNOW WHAT YOU ARE DOING !!!
+   superclass-canonical-name: "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem"
+   
+   class-to-modify: 
+   - "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer"
+   - "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.ADrill"
+   - "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AFarm"
+   - "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AReactor"
+   - "me.mrCookieSlime.Slimefun.Objects.SlimefunItem.machines.*"
+   
+   method-name-matching-regex: 
+   - ".*tick.*"
+
+value: 
+   
+   induction-mode: 
+      high-power: " 14 15"
+      low-power: "1 2"
+      any: "1 15"
+   
+   research: 
+      id-start: -123123

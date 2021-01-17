@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.freeze-dolphin</groupId>
-	<artifactId>tickblock-redstone-control</artifactId>
+	<artifactId>redstone-kontrolo</artifactId>
 	<version>1.0.0</version>
 
-	<name>TickBlockRedstoneControl</name>
-	<url>https://github.com/freeze-dolphin/TickBlockRedstoneControl</url>
+	<name>RedstoneKontrolo</name>
+	<url>https://github.com/freeze-dolphin/RedstoneKontrolo</url>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -25,10 +25,6 @@
 
 	<repositories>
 		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
-		<repository>
 			<id>nexus-aliyun</id>
 			<url>https://maven.aliyun.com/repository/public</url>
 		</repository>
@@ -43,6 +39,8 @@
 		</repository>
 	</repositories>
 
+	<!-- Slimefun & CS-CoreLib are ignored and you must add them manually to 
+		your build path -->
 	<dependencies>
 		<dependency>
 			<groupId>ink.ptms.core</groupId>
@@ -52,10 +50,10 @@
 			<classifier>all</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.gitee.narcissu14</groupId>
-			<artifactId>Slimefun4</artifactId>
-			<version>v4.1.15</version>
-			<scope>provided</scope>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.3.0</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
@@ -76,6 +74,38 @@
 					<escapeString>\</escapeString>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<configuration>
+					<relocations>
+						<relocation>
+							<pattern>net.sf.cglib</pattern>
+							<shadedPattern>io.freeze_dolphin.cglib</shadedPattern>
+						</relocation>
+						<relocation>
+							<pattern>org.objectweb.asm</pattern>
+							<shadedPattern>io.freeze_dolphin.asm</shadedPattern>
+						</relocation>
+					</relocations>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/**</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
