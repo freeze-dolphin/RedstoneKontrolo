@@ -1,2 +1,2 @@
 # RedstoneKontrolo
-A 3rd-party plugin of Slimefun which allow players to control the working statue of a machine by using redstone. 
+A 3rd-party plugin of Slimefun which allow players to control the working status of a machine by using redstone. 
